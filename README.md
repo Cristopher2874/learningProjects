@@ -19,4 +19,4 @@ Find different single-application projects in Python, Java, C++ and web applicat
 </div>
 
 ## Projects available
-* [Music-tags]
+* [Music-tags](./Python/Music-tags)
