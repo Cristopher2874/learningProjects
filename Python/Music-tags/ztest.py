@@ -1,14 +1,13 @@
 import cv2
 from pyapriltags import Detector
 import pygame
-import time
 
 # Inicializar pygame
 pygame.mixer.init()
 
 camera_index = 0
 specific_tag_id = 0
-sound_path = r'C:\Users\Gokus\OneDrive\Escritorio\learningProjects\Python\Music-tags\audio\audio_sample1.mp3'
+sound_path = r'C:\Users\Gokus\OneDrive\Escritorio\learningProjects\Python\Music-tags\utils\audio\audio_sample1.mp3'
 
 # Cargar el sonido
 sound = pygame.mixer.Sound(sound_path)
