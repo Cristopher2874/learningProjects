@@ -8,6 +8,12 @@ public class example{
         System.out.println("Enter a number: ");
         int number = scanner.nextInt();
         System.out.println("number: " + number);
+
+        int array1[] = {};
+        for(int i=0; i<number;i++){
+            array1[i] = scanner.nextInt();
+        }
+
         scanner.close();
     }
 }
