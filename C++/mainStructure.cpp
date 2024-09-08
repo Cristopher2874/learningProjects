@@ -1,10 +1,22 @@
+//library definition
 #include<iostream>
 #include<vector>
 
+//name space
 using namespace std;
 
+// function skeleton
+float f1(int, char);
+char f2(int, float);
+void f3();
+
+//structures defined
 vector<int> array1;
 
+//global variables and constants
+const float PI = 3.141596;
+
+//main program
 int main(void){
     int n;
     cout<<"Insert a number: ";
