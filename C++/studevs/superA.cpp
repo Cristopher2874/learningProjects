@@ -4,9 +4,11 @@
 
 #include <iostream>
 #include <vector>
-#include <cstring>
+#include <set>
 
 using namespace std;
+
+int diff=0, temp, idx;
 
 int main() {
     int n, g;
@@ -29,14 +31,25 @@ int main() {
             }
         }
     }
-    cout << place.back();
+    set<int> set2(place.begin(), place.end());
+    place.assign(set2.begin(), set2.end());
+
+    set<int> set(police.begin(), police.end());
+    police.assign(set.begin(), set.end());
+
+    if(place.size()>police.size()){
+        cout << place.back() <<"\n";
+    }else if(place.size()<police.size()){
+        cout << place[0] <<"\n";
+    }else{
+        for (int i = 0; i < place.size(); i++) {
+            temp = place[i] - police[i];
+            if(diff<temp){
+                diff = temp;
+                idx = i;
+            }
+        }
+        cout<<idx;
+    }
     return 0;
 }
-
-/*Entrada
-5 5
-G..#.
-##.G.
-G...#
-....#
-#####*/
