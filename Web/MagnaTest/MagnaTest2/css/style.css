@@ -359,6 +359,10 @@ button {
      display: none;
 }
 
+#myCarousel{
+     
+}
+
 #myCarousel .carousel-control-prev,
 #myCarousel .carousel-control-next {
      width: 36px;

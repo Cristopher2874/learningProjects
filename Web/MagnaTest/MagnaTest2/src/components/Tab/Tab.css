@@ -1,0 +1,16 @@
+.transparent-button {
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.transparent-button:focus {
+    border: none;
+    color: green;
+    outline: none; 
+}

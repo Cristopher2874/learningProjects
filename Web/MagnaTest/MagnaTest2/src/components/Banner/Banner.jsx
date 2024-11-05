@@ -1,3 +1,5 @@
+//import './Banner.css';
+
 export default function Banner(){
     return(
     <div id="myCarousel" className="carousel slide banner" data-ride="carousel">
@@ -62,7 +64,6 @@ export default function Banner(){
                 <div className="col-md-7 offset-md-5">
                     <div className="text-bg">
                     <h1>
-                        {" "}
                         Design <br />
                         Of Furniture
                     </h1>

@@ -1,6 +1,8 @@
+import './Tab.css';
+
 export default function Tab(props){
     return (
-        <div className="header">
+        <div className="header" id='tab'>
             <div className="container">
             <div className="row">
                 <div className="col-md-10 offset-md-1">
@@ -18,7 +20,7 @@ export default function Tab(props){
                     </button>
                     <div className="collapse navbar-collapse" id="navbarsExample04">
                     <ul className="navbar-nav mr-auto">
-                        <button onClick={props.onSelect}>{props.children}</button>
+                        <button className="transparent-button" id="buttonBanner" onClick={props.onSelect}>{props.children}</button>
                     </ul>
                     </div>
                 </nav>

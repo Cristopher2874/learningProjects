@@ -9,14 +9,9 @@ export default function About(props){
                     {props.title}
                     </h2>
                     <p>
-                    There are many variations of passages of Lorem Ipsum available,
-                    but the majority have suffered alteration in some form, by
-                    injected humourThere are many variations of passages of Lorem
-                    Ipsum available, but the majority have suffered alteration in some
-                    form, by injected humour
+                        {props.text}
                     </p>
                     <a className="read_more" href="Javascript:void(0)">
-                    {" "}
                     Read More
                     </a>
                 </div>
