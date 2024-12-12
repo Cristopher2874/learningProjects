@@ -11,13 +11,27 @@ const App = createBrowserRouter([
     children: [
       {
         path:"",
-        element: <LoginCard />,
+        element: <LoginCard />
       }
     ]
   },
   {
     path: "/home",
-    element: <Home />
+    element: <Home />,
+    children:[
+      {
+        path:"account",
+        element: <LoginCard />
+      },
+      {
+        path:"dashboard",
+        element: <LoginCard />
+      },
+      {
+        path:"calendar",
+        element: <LoginCard />
+      }
+    ]
   }
 ])
 
