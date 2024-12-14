@@ -4,6 +4,7 @@ import LoginCard from "./Elements/LogIn/LogInCard";
 import AccountCard from "./Elements/User/AccountCard";
 import Home from "./Layout/User/LayoutHome"
 import './App.css'
+import Dashboard from "./Elements/User/Dashboard";
 
 const App = createBrowserRouter([
   {
@@ -11,7 +12,7 @@ const App = createBrowserRouter([
     element: <LayoutLogin />,
     children: [
       {
-        path:"",
+        index:true,
         element: <LoginCard />
       }
     ]
@@ -21,15 +22,19 @@ const App = createBrowserRouter([
     element: <Home />,
     children:[
       {
+        index:true,
+        element: <Dashboard />
+      },
+      {
         path:"account",
         element: <AccountCard />
       },
       {
-        path:"dashboard",
+        path:"calendar",
         element: <LoginCard />
       },
       {
-        path:"calendar",
+        path:"inbox",
         element: <LoginCard />
       }
     ]
