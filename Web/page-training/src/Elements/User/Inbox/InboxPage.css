@@ -1,0 +1,13 @@
+.content {
+    padding: 20px;
+    text-align: start;
+    background-color: #ffffff;
+    min-height: 100vh;
+    color: black;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+  }

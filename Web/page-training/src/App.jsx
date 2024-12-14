@@ -5,6 +5,8 @@ import AccountCard from "./Elements/User/AccountCard";
 import Home from "./Layout/User/LayoutHome"
 import './App.css'
 import Dashboard from "./Elements/User/Dashboard";
+import Calendar from "./Elements/User/Calendar/CalendarPage";
+import Inbox from "./Elements/User/Inbox/InboxPage";
 
 const App = createBrowserRouter([
   {
@@ -31,11 +33,11 @@ const App = createBrowserRouter([
       },
       {
         path:"calendar",
-        element: <LoginCard />
+        element: <Calendar />
       },
       {
         path:"inbox",
-        element: <LoginCard />
+        element: <Inbox />
       }
     ]
   }

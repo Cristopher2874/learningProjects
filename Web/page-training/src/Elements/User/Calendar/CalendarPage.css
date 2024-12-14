@@ -1,0 +1,27 @@
+.calendar {
+    padding: 20px;
+    text-align: start;
+    background-color: #ffffff;
+    min-height: 100px;
+    height: 100vh;
+    color: black;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+  }
+
+  .content {
+    flex: 2;
+  }
+  
+  .sidebar {
+    flex: 0.3; 
+    margin-left: 50px; 
+  }
+
+  .separator {
+    border-top: 1px solid #888b8d; 
+    margin: 20px 0; 
+  }  
