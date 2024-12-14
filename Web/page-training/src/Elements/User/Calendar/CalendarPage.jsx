@@ -1,29 +1,43 @@
-import React from "react";
-import './CalendarPage.css'
+import React, { useState } from 'react';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-const Calendar = () =>{
-    return(
+const localizer = momentLocalizer(moment);
+
+const CalendarComponent = () => {
+    const [events, setEvents] = useState([
+        {
+            title: 'Entrega de proyecto',
+            start: new Date(2024, 11, 8, 23, 59), // 8 de diciembre de 2024 a las 11:59 PM
+            end: new Date(2024, 11, 8, 23, 59),
+            allDay: false,
+        },
+    ]);
+
+    return (
         <div className="calendar">
-            <div className="content">
-                <div classNmae="nav-bar">
-                    <h2>Hoy</h2>
-                    <hr className="separator"/>
-                    <p>Calendario</p>
-                </div>
-                <div className="calendar-view">
-                    <button></button>
-                </div>
-            </div>
-            <div className="side-bar">
-                <h4>Actividades</h4>
-                <hr className="separator"/>
-                <p>Nada por hacer</p>
-                <h4>Calendarios</h4>
-                <hr className="separator"/>
-                <p>No has agregado calendarios</p>
-            </div>
+            <h2>Calendario</h2>
+            <Calendar
+                localizer={localizer}
+                events={events}
+                startAccessor="start"
+                endAccessor="end"
+                style={{ height: 500 }}
+                views={['month', 'week', 'day', 'agenda']}
+                defaultView="month"
+                messages={{
+                    today: 'Hoy',
+                    previous: '←',
+                    next: '→',
+                    month: 'Mes',
+                    week: 'Semana',
+                    day: 'Día',
+                    agenda: 'Agenda',
+                }}
+            />
         </div>
     );
-}
+};
 
-export default Calendar;
+export default CalendarComponent;

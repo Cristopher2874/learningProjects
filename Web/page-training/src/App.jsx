@@ -3,10 +3,10 @@ import LayoutLogin from "./Layout/LogIn/LayoutLogin";
 import LoginCard from "./Elements/LogIn/LogInCard";
 import AccountCard from "./Elements/User/AccountCard";
 import Home from "./Layout/User/LayoutHome"
-import './App.css'
 import Dashboard from "./Elements/User/Dashboard";
 import Calendar from "./Elements/User/Calendar/CalendarPage";
 import Inbox from "./Elements/User/Inbox/InboxPage";
+import './App.css'
 
 const App = createBrowserRouter([
   {
@@ -37,6 +37,16 @@ const App = createBrowserRouter([
       },
       {
         path:"inbox",
+        element: <Inbox />
+      }
+    ]
+  },
+  {
+    path:"/evaluacion",
+    element: <Home />,
+    children:[
+      {
+        index:true,
         element: <Inbox />
       }
     ]

@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
@@ -42,7 +41,7 @@ const Dashboard = () => {
         <h4>Evaluaciones recientes</h4>
         <hr className="separator"/>
         <p>Sin evaluaciones</p>
-        <a href="/">Ver evaluciones</a>
+        <a href="/evaluacion">Ver evaluciones</a>
       </div>
     </div>
   );
