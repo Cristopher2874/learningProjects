@@ -1,32 +1,49 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import "./AccountCard.css";
 
-const AccountCard = () => {
-    const navigate = useNavigate();
-    const handleLogin = (event) => {
-        event.preventDefault();
-        navigate('/home');
-    };
+const AccountPage = () => {
+  const user = {
+    name: "David Hernandez",
+    email: "john.doe@example.com",
+    bio: "Full Stack Developer and tech enthusiast. Passionate about coding, learning, and sharing knowledge.",
+    avatar: "https://via.placeholder.com/150", // Cambiar a ruta de imagen
+    joinDate: "January 10, 2023",
+    location: "New York, USA",
+    role: "Administrator",
+  };
 
-    return (
-        <div className="login-card">
-            <h2>EXAMP¨LE</h2>
-            <form onSubmit={handleLogin}>
-                <div className="form-group">
-                    <label htmlFor="username">Nómina / usuario:</label>
-                    <input type="text" id="username" placeholder="Usuario" />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Contraseña:</label>
-                    <input type="password" id="password" placeholder="Contraseña" />
-                </div>
-                <br />
-                <button type="submit">Ingresar</button>
-            </form>
-            <p><a href="#">¿Olvidaste tu contraseña?</a></p>
-            <p><a href="#">¿Necesitas ayuda?</a></p>
+  return (
+    <div className="account-page">
+      <header className="profile-header">
+        <img className="avatar" src={user.avatar} alt={`${user.name}'s avatar`} />
+        <div className="header-details">
+          <h1>{user.name}</h1>
+          <p className="email">{user.email}</p>
         </div>
-    );
+      </header>
+
+      <section className="profile-info">
+        <h2>About</h2>
+        <p>{user.bio}</p>
+      </section>
+
+      <section className="profile-details">
+        <h2>Details</h2>
+        <ul>
+          <li><strong>Role:</strong> {user.role}</li>
+          <li><strong>Location:</strong> {user.location}</li>
+          <li><strong>Joined:</strong> {user.joinDate}</li>
+        </ul>
+      </section>
+
+      <section className="evaluations">
+        <h2>Evaluations</h2>
+        <ul>
+          <li>A</li>
+        </ul>
+      </section>
+    </div>
+  );
 };
 
-export default AccountCard;
+export default AccountPage;

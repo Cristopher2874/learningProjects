@@ -28,6 +28,7 @@ const Home = () => {
             <li><a href="/" onClick={(event) => handleSlider(event, "calendar")}>Calendar</a></li>
             <li><a href="/" onClick={(event) => handleSlider(event, "inbox")}>InBox</a></li>
           </ul>
+          <a href="/" className="exit">Salir</a>
         </div>
         <div className="content">
           <main>

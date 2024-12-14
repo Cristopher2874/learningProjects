@@ -1,32 +1,51 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Dashboard.css";
+
+const courses = [
+  { id: 1, title: "Seguridad", description: "Seguridad en la planta y uso de herramientas", route: "react-basics" },
+  { id: 2, title: "GM platform", description: "Conexión a la plataforma GM", route: "advanced-js" },
+  { id: 3, title: "Introducción", description: "Conoce Magna Inctrl", route: "ui-ux-design" },
+  { id: 4, title: "Servicio al cliente", description: "Atención efectiva de activos y clientes", route: "data-structures" },
+];
 
 const Dashboard = () => {
-    const navigate = useNavigate();
-    const handleLogin = (event) => {
-        event.preventDefault();
-        navigate('/home');
-    };
+  const navigate = useNavigate();
 
-    return (
-        <div className="login-card">
-            <h2>Init card</h2>
-            <form onSubmit={handleLogin}>
-                <div className="form-group">
-                    <label htmlFor="username">Nómina / usuario:</label>
-                    <input type="text" id="username" placeholder="Usuario" />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Contraseña:</label>
-                    <input type="password" id="password" placeholder="Contraseña" />
-                </div>
-                <br />
-                <button type="submit">Ingresar</button>
-            </form>
-            <p><a href="#">¿Olvidaste tu contraseña?</a></p>
-            <p><a href="#">¿Necesitas ayuda?</a></p>
+  const handleCardClick = (route) => {
+    navigate(`/courses/${route}`);
+  };
+
+  return (
+    <div className="dashboard">
+      <div className="main-content">
+        <h1>Cursos actuales</h1>
+        <hr className="separator" />
+        <div className="card-container">
+          {courses.map((course) => (
+            <div
+              key={course.id}
+              className="card"
+              onClick={() => handleCardClick(course.route)}
+            >
+              <h2>{course.title}</h2>
+              <p>{course.description}</p>
+            </div>
+          ))}
         </div>
-    );
+      </div>
+      <div className="sidebar">
+        <h4>Por hacer</h4>
+        <hr className="separator"/>
+        <p>Nada actual</p>
+        <br />
+        <h4>Evaluaciones recientes</h4>
+        <hr className="separator"/>
+        <p>Sin evaluaciones</p>
+        <a href="/">Ver evaluciones</a>
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;
