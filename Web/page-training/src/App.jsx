@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import LayoutLogin from "./Layout/LayoutLogin";
-import LoginCard from "./Elements/LogInCard";
-import Home from "./Elements/Home"
+import LayoutLogin from "./Layout/LogIn/LayoutLogin";
+import LoginCard from "./Elements/LogIn/LogInCard";
+import AccountCard from "./Elements/User/AccountCard";
+import Home from "./Layout/User/LayoutHome"
 import './App.css'
 
 const App = createBrowserRouter([
@@ -21,7 +22,7 @@ const App = createBrowserRouter([
     children:[
       {
         path:"account",
-        element: <LoginCard />
+        element: <AccountCard />
       },
       {
         path:"dashboard",

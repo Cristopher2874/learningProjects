@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import './LayoutLogin.css'
-import magnaLogo from "../assets/LOGOS(1)/LOGOS/Magna-Logo-White-Reverse-MR-V1.0.png"
+import magnaLogo from "../../assets/LOGOS(1)/LOGOS/Magna-Logo-White-Reverse-MR-V1.0.png"
 
 const LayoutLogin = () => {
   return(
