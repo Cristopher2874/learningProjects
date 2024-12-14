@@ -23,8 +23,14 @@ const Home = () => {
             </div>
           </header>
           <ul>
-            <li><a href="/" onClick={(event) => handleSlider(event, "account")}>Account</a></li>
-            <li><a href="/" onClick={(event) => handleSlider(event, "")}>Dashboard</a></li>
+            <li>
+              <i className="fas fa-user-circle"></i>
+              <a href="/" onClick={(event) => handleSlider(event, "account")}>Account</a>
+            </li>
+            <li>
+              <i className="fas fa-etsy"></i>
+              <a href="/" onClick={(event) => handleSlider(event, "")}>Dashboard</a>
+            </li>
             <li><a href="/" onClick={(event) => handleSlider(event, "calendar")}>Calendar</a></li>
             <li><a href="/" onClick={(event) => handleSlider(event, "inbox")}>InBox</a></li>
           </ul>

@@ -35,6 +35,38 @@
     color: #000000;
   }
   
+  .password-container {
+    position: relative;
+  }
+
+  .password-container input{
+    width: 100%;
+    padding: 10px;
+    padding-right: 50px; 
+    box-sizing: border-box;
+  }
+
+  .show-password-btn{
+    position: absolute;
+    color: #000000;
+    border: none;
+    outline: none;
+    right: 20px;
+    top: 45%;
+    background-color: transparent;
+    cursor: pointer;
+    max-width: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .show-password-btn:focus {
+    outline: none;
+  }
+
+  .show-password-btn:hover{
+    background-color: transparent;
+  }
+
   button {
     width: 100%;
     padding: 10px;
