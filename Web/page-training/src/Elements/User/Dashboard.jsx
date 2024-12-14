@@ -19,7 +19,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="main-content">
-        <h1>Cursos actuales</h1>
+        <h2>Cursos actuales</h2>
         <hr className="separator" />
         <div className="card-container">
           {courses.map((course) => (

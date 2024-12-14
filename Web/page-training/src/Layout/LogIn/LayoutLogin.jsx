@@ -12,11 +12,11 @@ const LayoutLogin = () => {
         </div>
         <nav>
           <ul>
-            <li><a href="#"><i className="fab fa-apple">H1</i></a></li>
-            <li><a href="#"><i className="fab fa-twitter">H2</i></a></li>
-            <li><a href="#"><i className="fab fa-facebook-f">H3</i></a></li>
-            <li><a href="#"><i className="fab fa-instagram">H4</i></a></li>
-            <li><a href="#"><i className="fab fa-youtube">H4</i></a></li>
+            <li><a href="#"><i className="fab fa-apple"></i></a></li>
+            <li><a href="#"><i className="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i className="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i className="fab fa-youtube"></i></a></li>
           </ul>
         </nav>
       </header>

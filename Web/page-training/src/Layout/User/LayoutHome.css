@@ -19,7 +19,7 @@ body, html {
 }
 
 .slider {
-  width: 10%; 
+  width: fit-content; 
   background-color: #000000;
   color: white;
   display: flex;
@@ -79,7 +79,7 @@ body, html {
 }
 
 .slider ul li i {
-  padding-right: 10px;
+  padding-right: 5px;
 }
 
 .content {
