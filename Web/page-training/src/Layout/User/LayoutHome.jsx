@@ -24,15 +24,13 @@ const Home = () => {
           </header>
           <ul>
             <li>
-              <i className="fas fa-user-circle"></i>
-              <a href="/" onClick={(event) => handleSlider(event, "account")}>Account</a>
+              <a href="/" onClick={(event) => handleSlider(event, "account")}> <i className="fas fa-user-circle"></i> Account</a>
             </li>
             <li>
-              <i className="fas fa-etsy"></i>
-              <a href="/" onClick={(event) => handleSlider(event, "")}>Dashboard</a>
+              <a href="/" onClick={(event) => handleSlider(event, "")}> <i className="fas fa-tachometer-alt"></i> Dashboard</a>
             </li>
-            <li><a href="/" onClick={(event) => handleSlider(event, "calendar")}>Calendar</a></li>
-            <li><a href="/" onClick={(event) => handleSlider(event, "inbox")}>InBox</a></li>
+            <li><a href="/" onClick={(event) => handleSlider(event, "calendar")}> <i className="fas fa-calendar"></i> Calendar</a></li>
+            <li><a href="/" onClick={(event) => handleSlider(event, "inbox")}> <i className="fas fa-inbox"></i> InBox</a></li>
           </ul>
           <a href="/" className="exit">Salir</a>
         </div>

@@ -78,6 +78,10 @@ body, html {
   color: #da291c;
 }
 
+.slider ul li i {
+  padding-right: 10px;
+}
+
 .content {
   flex: 1; 
   padding: 0px;
