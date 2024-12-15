@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import LayoutLogin from "./Layout/LogIn/LayoutLogin";
+import LayoutLogin from "./Layout/LayoutLogin";
 import LoginCard from "./Elements/LogIn/LogInCard";
 import AccountCard from "./Elements/User/AccountCard";
-import Home from "./Layout/User/LayoutHome"
+import Home from "./Layout/LayoutHome"
 import Dashboard from "./Elements/User/Dashboard";
 import Calendar from "./Elements/User/Calendar/CalendarPage";
 import Inbox from "./Elements/User/Inbox/InboxPage";

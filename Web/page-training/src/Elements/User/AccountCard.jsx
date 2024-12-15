@@ -1,5 +1,3 @@
-import "./AccountCard.css";
-
 const AccountPage = () => {
   const user = {
     name: "David Hernandez",
@@ -12,17 +10,17 @@ const AccountPage = () => {
   };
 
   return (
-    <div className="account-page">
-      <header className="profile-header">
-        <img className="avatar" src={user.avatar} alt={`${user.name}'s avatar`} />
-        <div className="header-details">
+    <div className="p-4 mt-1 text-[#333] bg-[#f9f9f9] h-screen w-full">
+      <header className="bg-black text-white p-4 rounded-lg flex justify-around items-center h-auto">
+        <img className=" flex-roww-36 h-auto rounded-full text-white p-3" src={user.avatar} alt={`${user.name}'s avatar`} />
+        <div className="m-0 font-2 flex-row">
           <h1>{user.name}</h1>
-          <p className="email">{user.email}</p>
+          <p className="mt-1 text-opacity-0.1">{user.email}</p>
         </div>
       </header>
 
-      <section className="profile-info">
-        <h2>About</h2>
+      <section className="mt-4 bg-white p-3 rounded-lg shadow-md">
+        <h2 className="mb-2 text-black">About</h2>
         <p>{user.bio}</p>
       </section>
 

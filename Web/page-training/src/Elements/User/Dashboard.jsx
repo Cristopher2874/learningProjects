@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <div className="main-content">
+      <section className="main-content">
         <h2>Cursos actuales</h2>
         <hr className="separator" />
         <div className="card-container">
@@ -32,8 +32,8 @@ const Dashboard = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="sidebar">
+      </section>
+      <section className="sidebar">
         <h4>Por hacer</h4>
         <hr className="separator"/>
         <p>Nada actual</p>
@@ -42,7 +42,7 @@ const Dashboard = () => {
         <hr className="separator"/>
         <p>Sin evaluaciones</p>
         <a href="/evaluacion">Ver evaluciones</a>
-      </div>
+      </section>
     </div>
   );
 };
