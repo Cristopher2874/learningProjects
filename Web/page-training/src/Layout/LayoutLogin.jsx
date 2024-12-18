@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import magnaLogo from "/public/assets/LOGOS(1)/LOGOS/Magna-Logo-White-Reverse-MR-V1.0.png"
+import magnaLogo from "/assets/LOGOS(1)/LOGOS/Magna-Logo-White-Reverse-MR-V1.0.png"
 
 const LayoutLogin = () => {
   return(
@@ -18,7 +18,7 @@ const LayoutLogin = () => {
           </ul>
         </nav>
       </header>
-      <main className="flex-grow flex-1 justify-center items-center bg-[url('/public/assets/login-back.jpg')] bg-cover bg-center"> 
+      <main className="flex-grow flex-1 justify-center items-center bg-[url('/assets/login-back.jpg')] bg-cover bg-center"> 
         <div className="flex justify-center items-center w-full h-full bg-black bg-opacity-50">
           <Outlet />
         </div>

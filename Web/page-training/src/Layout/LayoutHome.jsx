@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import magnaLogo from "/public/assets/LOGOS(1)/LOGOS/Magna-Logo-White-Reverse-MR-V1.0.png"
+import magnaLogo from "/assets/LOGOS(1)/LOGOS/Magna-Logo-White-Reverse-MR-V1.0.png"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,9 +12,9 @@ const Home = () => {
   return (
     <div className="h-screen flex flex-col overflow-hidden"> 
       <div className="flex flex-row h-full">
-        <aside className="w-fit-content bg-black text-white flex flex-col p-3">
-          <header className="mb-4">
-              <a href="" className="list-none p-3 mb-6">
+        <aside className="w-52 bg-black text-white flex flex-col p-3 justify-center">
+          <header className="flex mb-4">
+              <a href="" className="list-none p-3 mb-6 ml-2">
                 <img src={magnaLogo} alt="MAGNA IN CTRL" className="max-h-7"/>
               </a>
           </header>
