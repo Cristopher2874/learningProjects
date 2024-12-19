@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import magnaLogo from "/assets/LOGOS(1)/LOGOS/Magna-Logo-White-Reverse-MR-V1.0.png"
+import reactLogo from "/assets/react.svg"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Home = () => {
         <aside className="w-52 bg-black text-white flex flex-col p-3 justify-center">
           <header className="flex mb-4">
               <a href="" className="list-none p-3 mb-6 ml-2">
-                <img src={magnaLogo} alt="MAGNA IN CTRL" className="max-h-7"/>
+                <img src={reactLogo} alt="Logo" className="max-h-7"/>
               </a>
           </header>
           <nav className="flex-1">
@@ -30,7 +30,7 @@ const Home = () => {
               <li><a href="/" onClick={(event) => handleSlider(event, "inbox")}> <i className="fas fa-inbox"></i> InBox</a></li>
             </ul>
           </nav>
-          <a href="/" className="flex justify-center text-white h-8 bg-[#da291c] items-center rounded-md mt-auto">Salir</a>
+          <a href="/" className="flex justify-center text-white h-8 bg-[#da291c] items-center rounded-md mt-auto">Log Out</a>
         </aside>
           <main className="flex-1 p-0 justify-center items-center bg-white overflow-auto">
             <Outlet />

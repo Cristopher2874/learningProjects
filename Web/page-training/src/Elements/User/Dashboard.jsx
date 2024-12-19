@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
 const courses = [
-  { id: 1, title: "Seguridad", description: "Seguridad en la planta y uso de herramientas", route: "react-basics" },
-  { id: 2, title: "GM platform", description: "Conexión a la plataforma GM", route: "advanced-js" },
-  { id: 3, title: "Introducción", description: "Conoce Magna Inctrl", route: "ui-ux-design" },
-  { id: 4, title: "Servicio al cliente", description: "Atención efectiva de activos y clientes", route: "data-structures" },
+  { id: 1, title: "Safety", description: "Safety in workshop and tools", route: "react-basics" },
+  { id: 2, title: "platforms", description: "Conexion to the main page", route: "advanced-js" },
+  { id: 3, title: "Introduction", description: "Know the new tools", route: "ui-ux-design" },
+  { id: 4, title: "Client attention", description: "Effective antention and clients", route: "data-structures" },
 ];
 
 const Dashboard = () => {
@@ -19,7 +19,7 @@ const Dashboard = () => {
     box-border w-full justify-between
   ">
       <section className="flex-2">
-        <h2 className="text-3xl">Cursos actuales</h2>
+        <h2 className="text-3xl">Current courses</h2>
         <hr className="border-t-[#888b8d] mb-6 w-full mt-3" />
         <div className="flex flex-wrap gap-5 justify-start items-start mx-0 my-auto max-w-full box-border">
           {courses.map((course) => (
@@ -35,14 +35,14 @@ const Dashboard = () => {
         </div>
       </section>
       <section className="flex-0.3 ml-6">
-        <h4>Por hacer</h4>
+        <h4>To Do</h4>
         <hr className="border-t-[#888b8d] mb-6 w-full mt-3"/>
-        <p>Nada actual</p>
+        <p>Nothing left</p>
         <br />
-        <h4>Evaluaciones recientes</h4>
+        <h4>Recent evaluations</h4>
         <hr className="border-t-[#888b8d] mb-6 w-full mt-3"/>
-        <p>Sin evaluaciones</p>
-        <a href="/evaluacion">Ver evaluciones</a>
+        <p>No evaluations</p>
+        <a href="/evaluacion">See recent evaluations</a>
       </section>
     </div>
   );

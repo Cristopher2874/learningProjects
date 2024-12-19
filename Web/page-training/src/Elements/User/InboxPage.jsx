@@ -6,24 +6,24 @@ const Inbox = () => {
     const messages = [
         {
             id: 1,
-            date: '7 de dic de 2023',
+            date: 'Dec 7, 2023',
             sender: 'Leopoldo Zúñiga Silva, Óscar Emiliano',
-            subject: 'Calificaciones Finales',
-            preview: 'Estimados alumnos: Ya están liberadas...',
+            subject: 'Final Grades',
+            preview: 'Dear students: The final grades are now available...',
         },
         {
             id: 2,
-            date: '7 de dic de 2023',
+            date: 'Dec 7, 2023',
             sender: 'Leopoldo Zúñiga Silva, Óscar Emiliano',
-            subject: 'Sobre Calif. Finales',
-            preview: 'Estimados alumnos: Aún me faltan algunos...',
+            subject: 'About Final Grades',
+            preview: 'Dear students: I am still missing some...',
         },
         {
             id: 3,
-            date: '4 de dic de 2023',
+            date: 'Dec 4, 2023',
             sender: 'Nahum Andrés Medellín Castillo, Óscar Emiliano',
-            subject: 'Calificaciones finales_UF Nahum Medellín',
-            preview: 'Estimados alumnos: Les envío sus calific...',
+            subject: 'Final Grades_UF Nahum Medellín',
+            preview: 'Dear students: I am sending your grades...',
         },
     ];
 
@@ -31,7 +31,7 @@ const Inbox = () => {
         <div className="flex h-screen text-black">
             <div className="w-1/3 border-r border-gray-300">
                 <div className="p-4 border-b">
-                    <h1 className="text-lg font-semibold text-black">Bandeja de entrada</h1>
+                    <h1 className="text-lg font-semibold text-black">Inbox</h1>
                 </div>
                 <ul className="overflow-y-auto h-full">
                     {messages.map((message) => (
@@ -72,7 +72,7 @@ const Inbox = () => {
                                 d="M21.75 9v9.75a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V9m0 0L12 3l9.75 6z"
                             />
                         </svg>
-                        <p>No se han seleccionado conversaciones</p>
+                        <p>No conversations selected</p>
                     </div>
                 )}
             </div>

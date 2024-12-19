@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import magnaLogo from "/assets/LOGOS(1)/LOGOS/Magna-Logo-White-Reverse-MR-V1.0.png"
+import reactLogo from "/assets/react.svg"
 
 const LayoutLogin = () => {
   return(
     <div className="flex flex-col h-screen overflow-hidden">
       <header className="bg-black text-white flex justify-between items-center p-4">
         <figure className="flex justify-center items-center">
-          <img src={magnaLogo} alt="MAGNA IN CTRL" className="w-36 h-auto"/>
+          <img src={reactLogo} alt="Logo" className="w-8 h-auto"/>
         </figure>
         <nav className="flex justify-row items-auto ml-auto">
           <ul className="flex justify-row items-center gap-3">
@@ -25,9 +25,9 @@ const LayoutLogin = () => {
       </main>
       <footer className="bg-black text-white flex justify-center items-center p-4">
         <p>
-          <a href="#" className="p-5">Aviso de Privacidad</a>
-          <a href="#" className="p-5">Éthos</a>
-          <span>&copy; 2024 MAGNA</span>
+          <a href="#" className="p-5">Privacy policy</a>
+          <a href="#" className="p-5">Code of ethics</a>
+          <span>&copy; 2024 InCtrl</span>
         </p>
       </footer>
     </div>

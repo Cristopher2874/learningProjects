@@ -3,33 +3,33 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-// Configurar el idioma en español
-moment.locale('es');
+// Set the locale to English
+moment.locale('en');
 const localizer = momentLocalizer(moment);
 
 const CalendarComponent = () => {
     const [events, setEvents] = useState([
         {
-            title: 'Entrega de proyecto',
+            title: 'Project Delivery',
             start: new Date(2024, 11, 8, 23, 59),
             end: new Date(2024, 11, 8, 23, 59),
             allDay: false,
         },
         {
-            title: 'Reunión con el equipo',
+            title: 'Team Meeting',
             start: new Date(2024, 11, 10, 10, 0),
             end: new Date(2024, 11, 10, 11, 0),
             allDay: false,
         },
         {
-            title: 'Día libre',
+            title: 'Day Off',
             start: new Date(2024, 11, 15),
             end: new Date(2024, 11, 15),
             allDay: true,
         },
     ]);
 
-    // Estilos personalizados para las celdas del calendario
+    // Custom styles for calendar cells
     const calendarCustomStyles = {
         style: {
             backgroundColor: '#ffffff',
@@ -45,7 +45,7 @@ const CalendarComponent = () => {
 
     return (
         <div className="calendar-container">
-            <h2 className="calendar-title">Calendario</h2>
+            <h2 className="calendar-title">Calendar</h2>
 
             <Calendar
                 localizer={localizer}
@@ -58,12 +58,12 @@ const CalendarComponent = () => {
                 }}
                 views={['month', 'week', 'day', 'agenda']}
                 messages={{
-                    today: 'Hoy',
+                    today: 'Today',
                     previous: '←',
                     next: '→',
-                    month: 'Mes',
-                    week: 'Semana',
-                    day: 'Día',
+                    month: 'Month',
+                    week: 'Week',
+                    day: 'Day',
                     agenda: 'Agenda',
                 }}
             />
