@@ -1,43 +1,49 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
+import reactLogo from "/assets/vite.svg";
+import SearchBar from "../Elements/Store/SearchBar";
 
 const LayoutStore = () => {
     return (
-        <div className="h-screen flex flex-col justify-between w-full">
-            <header className="flex flex-row justify-evenly items-center p-5">
-                <div className="flex-initial mr-5">Store Logo</div>
-                <nav className="flex-initial flex-row justify-between items-center">
-                    <ul className="flex flex-row">
-                        <li className="p-2"><a href="#home">Home</a></li>
-                        <li className="p-2"><a href="#products">Products</a></li>
-                        <li className="p-2"><a href="#deals">Deals</a></li>
-                        <li className="p-2"><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-                <div className="flex-initial">
-                    <input type="text" placeholder="Search for products..." className="rounded-lg p-2 mr-1"/>
-                    <button className="p-2">Search</button>
-                </div>
-                <div className="flex-initial">
-                    <a href="#cart">Cart</a>
-                </div>
+        <div className="flex flex-col h-screen">
+            <header className="flex justify-evenly items-center p-5 bg-[#27223aff]">
+                <img className="flex-initial mr-3" src={reactLogo}></img>
+                <SearchBar />
+                <Link to="/home/account" className="text-[#f3f1f2ff] px-4">
+                    <i className="fas fa-user-circle"></i>
+                    <p>My Profile</p>
+                </Link>
+                <Link to="/home" className="text-[#f3f1f2ff]">
+                    <i className="fas fa-wallet"></i>
+                    <p>Bag</p>
+                </Link>
             </header>
-            <main className="main-content">
-                <section className="p-5">
-                    <h1>Welcome to Our Store</h1>
-                    <p>Find the best products at unbeatable prices!</p>
-                </section>
-                <section className="products">
-                    <h2>Featured Products</h2>
-                    <div className="p-5">
-                        <Outlet />
-                    </div>
-                </section>
+            <nav className="flex justify-row items-auto p-1 w-full bg-[#463d68]">
+                    <ul className="flex flex-row justify-around items-center w-full">
+                        <li className="p-2"><Link to="#home" className="text-[#f3f1f2ff]">Home</Link></li>
+                        <li className="p-2"><Link to="#products" className="text-[#f3f1f2ff]">Products</Link></li>
+                        <li className="p-2"><Link to="#deals" className="text-[#f3f1f2ff]">Deals</Link></li>
+                        <li className="p-2"><Link to="#contact" className="text-[#f3f1f2ff]">Contact</Link></li>
+                    </ul>
+            </nav>
+            <main className="bg-[#f3f1f2ff] flex-grow flex-1 justify-center items-center">
+                <div className="flex justify-center items-center w-full h-full">
+                    <Outlet />
+                </div>
             </main>
-            <footer className="footer">
-                <p>&copy; 2023 Store Name. All rights reserved.</p>
+            <footer className="justify-center items-center w-full bg-[#27223aff] text-[#f3f1f2ff] p-2">
+                <p>&copy; 2023 Vite Store. All rights reserved.</p>
             </footer>
         </div>
     );
 };
 
 export default LayoutStore;
+
+/* CSS HEX
+/* CSS HEX
+--dark-purple: #27223aff;
+--uranian-blue: #a9cef4ff;
+--xanthous: #f3b61fff;
+--claret: #811d2eff;
+--white-smoke: #f3f1f2ff;
+*/

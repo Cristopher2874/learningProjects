@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import reactLogo from "/assets/react.svg"
 
 const LayoutLogin = () => {
@@ -11,10 +11,10 @@ const LayoutLogin = () => {
         <nav className="flex justify-row items-auto ml-auto">
           <ul className="flex justify-row items-center gap-3">
             <li className=""><a href="#"><i className="fab fa-apple"></i></a></li>
-            <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i className="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i className="fab fa-youtube"></i></a></li>
+            <li><Link to="#"><i className="fab fa-twitter"></i></Link></li>
+            <li><Link to="#"><i className="fab fa-facebook-f"></i></Link></li>
+            <li><Link to="#"><i className="fab fa-instagram"></i></Link></li>
+            <li><Link to="#"><i className="fab fa-youtube"></i></Link></li>
           </ul>
         </nav>
       </header>
@@ -25,8 +25,8 @@ const LayoutLogin = () => {
       </main>
       <footer className="bg-black text-white flex justify-center items-center p-4">
         <p>
-          <a href="#" className="p-5">Privacy policy</a>
-          <a href="#" className="p-5">Code of ethics</a>
+          <Link to="#" className="p-5">Privacy policy</Link>
+          <Link to="#" className="p-5">Code of ethics</Link>
           <span>&copy; 2024 InCtrl</span>
         </p>
       </footer>

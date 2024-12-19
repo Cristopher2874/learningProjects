@@ -9,7 +9,7 @@ import Inbox from "./Elements/User/InboxPage";
 import MainEvaluations from "./Elements/Evaluations/MainEvaluations";
 import './App.css'
 import LayoutStore from "./Layout/LayoutStore";
-import ProductCard from "./Elements/Store/ProductCard";
+import ProductCard from "./Elements/Store/ProductBase";
 
 const App = createBrowserRouter([
   {

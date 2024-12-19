@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const LoginCard = () => {
     const navigate = useNavigate();
@@ -43,7 +44,7 @@ const LoginCard = () => {
                 >Connect</button>
             <p className='mt-4 text-center'><a href="#" className='text-black cursor-pointer hover:underline hover:text-[#da291c]'>Forgot Password?</a></p>
             <p className='mt-4 text-center'><a href="#" className='text-black cursor-pointer hover:underline hover:text-[#da291c]'>Need help?</a></p>
-            <a onClick={() => handleLogin("store")} className='text-black cursor-pointer hover:underline hover:text-[#da291c]'>Store</a>
+            <Link onClick={() => handleLogin("store")} className='text-black cursor-pointer hover:underline hover:text-[#da291c]'>Store</Link>
             </form>
     );
 };
