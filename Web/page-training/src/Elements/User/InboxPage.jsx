@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './InboxPage.css';
 
 const Inbox = () => {
     const [selectedMessage, setSelectedMessage] = useState(null);
@@ -29,11 +28,10 @@ const Inbox = () => {
     ];
 
     return (
-        <div className="flex h-screen">
-            {/* Sidebar */}
+        <div className="flex h-screen text-black">
             <div className="w-1/3 border-r border-gray-300">
                 <div className="p-4 border-b">
-                    <h1 className="text-lg font-semibold">Bandeja de entrada</h1>
+                    <h1 className="text-lg font-semibold text-black">Bandeja de entrada</h1>
                 </div>
                 <ul className="overflow-y-auto h-full">
                     {messages.map((message) => (
@@ -45,14 +43,12 @@ const Inbox = () => {
                             }`}
                         >
                             <p className="text-sm text-gray-500">{message.date}</p>
-                            <p className="font-semibold">{message.sender}</p>
+                            <p className="font-semibold text-black">{message.sender}</p>
                             <p className="text-sm text-gray-500">{message.subject}</p>
                         </li>
                     ))}
                 </ul>
             </div>
-
-            {/* Message View */}
             <div className="flex-1 flex items-center justify-center">
                 {selectedMessage ? (
                     <div className="p-8">

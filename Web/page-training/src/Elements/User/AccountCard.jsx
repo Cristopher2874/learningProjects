@@ -10,8 +10,8 @@ const AccountPage = () => {
   };
 
   return (
-    <div className="p-4 mt-1 text-[#333] bg-[#f9f9f9] h-screen w-full">
-      <header className="bg-black text-white p-4 rounded-lg flex justify-around items-center h-auto">
+    <div className="p-5 mt-3 text-[#333] bg-[#f9f9f9] h-screen w-full mb-14">
+      <header className="bg-black text-white p-4 rounded-lg flex justify-around items-center h-auto gap-4">
         <img className=" flex-roww-36 h-auto rounded-full text-white p-3" src={user.avatar} alt={`${user.name}'s avatar`} />
         <div className="m-0 font-2 flex-row">
           <h1>{user.name}</h1>
@@ -20,23 +20,23 @@ const AccountPage = () => {
       </header>
 
       <section className="mt-4 bg-white p-3 rounded-lg shadow-md">
-        <h2 className="mb-2 text-black">About</h2>
+        <h2 className="mb-2 text-black text-lg">About</h2>
         <p>{user.bio}</p>
       </section>
 
-      <section className="profile-details">
-        <h2>Details</h2>
-        <ul>
-          <li><strong>Role:</strong> {user.role}</li>
-          <li><strong>Location:</strong> {user.location}</li>
-          <li><strong>Joined:</strong> {user.joinDate}</li>
+      <section className="mt-4 bg-white p-3 rounded-lg shadow-md">
+        <h2 className="mb-2 text-black text-lg">Details</h2>
+        <ul className="list-none p-0">
+          <li className="mb-2"><strong className="text-[#888b8d]">Role:</strong> {user.role}</li>
+          <li className="mb-2"><strong className="text-[#888b8d]">Location:</strong> {user.location}</li>
+          <li className="mb-2"><strong className="text-[#888b8d]">Joined:</strong> {user.joinDate}</li>
         </ul>
       </section>
 
-      <section className="evaluations">
-        <h2>Evaluations</h2>
-        <ul>
-          <li>A</li>
+      <section className="mt-4 bg-white p-3 rounded-lg shadow-md">
+        <h2 className="mb-2 text-black text-lg">Evaluations</h2>
+        <ul className="list-none p-0">
+          <li className="mb-2">A</li>
         </ul>
       </section>
     </div>

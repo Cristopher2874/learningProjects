@@ -4,8 +4,8 @@ import LoginCard from "./Elements/LogIn/LogInCard";
 import AccountCard from "./Elements/User/AccountCard";
 import Home from "./Layout/LayoutHome"
 import Dashboard from "./Elements/User/Dashboard";
-import Calendar from "./Elements/User/Calendar/CalendarPage";
-import Inbox from "./Elements/User/Inbox/InboxPage";
+import Calendar from "./Elements/User/CalendarPage";
+import Inbox from "./Elements/User/InboxPage";
 import './App.css'
 
 const App = createBrowserRouter([
