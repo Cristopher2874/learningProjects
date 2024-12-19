@@ -6,7 +6,10 @@ import Home from "./Layout/LayoutHome"
 import Dashboard from "./Elements/User/Dashboard";
 import Calendar from "./Elements/User/CalendarPage";
 import Inbox from "./Elements/User/InboxPage";
+import MainEvaluations from "./Elements/Evaluations/MainEvaluations";
 import './App.css'
+import LayoutStore from "./Layout/LayoutStore";
+import ProductCard from "./Elements/Store/ProductCard";
 
 const App = createBrowserRouter([
   {
@@ -47,7 +50,17 @@ const App = createBrowserRouter([
     children:[
       {
         index:true,
-        element: <Inbox />
+        element: <MainEvaluations />
+      }
+    ]
+  },
+  {
+    path: "/store",
+    element: <LayoutStore />,
+    children: [
+      {
+        index:true,
+        element: <ProductCard />
       }
     ]
   }
