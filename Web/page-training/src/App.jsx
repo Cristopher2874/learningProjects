@@ -7,9 +7,9 @@ import Dashboard from "./Elements/User/Dashboard";
 import Calendar from "./Elements/User/CalendarPage";
 import Inbox from "./Elements/User/InboxPage";
 import MainEvaluations from "./Elements/Evaluations/MainEvaluations";
-import './App.css'
 import LayoutStore from "./Layout/LayoutStore";
-import ProductCard from "./Elements/Store/ProductBase";
+import ProductBase from "./Elements/Store/ProductBase";
+import './App.css'
 
 const App = createBrowserRouter([
   {
@@ -60,7 +60,7 @@ const App = createBrowserRouter([
     children: [
       {
         index:true,
-        element: <ProductCard />
+        element: <ProductBase />
       }
     ]
   }
