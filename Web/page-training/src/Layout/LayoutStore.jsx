@@ -1,9 +1,43 @@
+import { createContext, useState, useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import reactLogo from "/assets/vite.svg";
 import SearchBar from "../Elements/Store/SearchBar";
 
+export const LayoutContext = createContext();
+
 const LayoutStore = () => {
+    const [searchItem, setSearchItem] = useState('');
+    const [data, setData] = useState([]);
+    const [cart, setCart] = useState([]);
+
+    useEffect(() => {
+        try{
+            fetch('https://api.escuelajs.co/api/v1/products')
+                .then(response => response.json())
+                .then(products => setData(products))
+                .catch(error => {
+                    alert('Error fetching products: ' + error.message);
+                });
+        }
+        catch{
+            console.log('Error fetching products');
+        }
+    }, []);
+
+    function addToCard(product){
+        const item = cart.findIndex((item) => item.id === product.id);
+        if(item === -1){
+            product.quantity = 1;
+            setCart([...cart, product]);
+        } else {
+            const newCart = [...cart];
+            newCart[item].quantity++;
+            setCart(newCart);
+        }
+    }
+
     return (
+        <LayoutContext.Provider value={{searchItem, setSearchItem, data, setData, cart, addToCard}}>
         <div className="flex flex-col h-screen">
             <header className="flex justify-evenly items-center p-5 bg-[#27223aff]">
                 <img className="flex-initial mr-3" src={reactLogo}></img>
@@ -38,6 +72,7 @@ const LayoutStore = () => {
                 <p>&copy; 2023 Vite Store. All rights reserved.</p>
             </footer>
         </div>
+        </LayoutContext.Provider>
     );
 };
 
