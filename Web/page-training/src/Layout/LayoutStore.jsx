@@ -7,19 +7,21 @@ const LayoutStore = () => {
         <div className="flex flex-col h-screen">
             <header className="flex justify-evenly items-center p-5 bg-[#27223aff]">
                 <img className="flex-initial mr-3" src={reactLogo}></img>
+
                 <SearchBar />
-                <Link to="/home/account" className="text-[#f3f1f2ff] px-4">
+
+                <Link to="/home" className="text-[#f3f1f2ff] px-4">
                     <i className="fas fa-user-circle"></i>
                     <p>My Profile</p>
                 </Link>
-                <Link to="/home" className="text-[#f3f1f2ff]">
+                <Link to="/store/cart" className="text-[#f3f1f2ff]">
                     <i className="fas fa-wallet"></i>
-                    <p>Bag</p>
+                    <p>Cart</p>
                 </Link>
             </header>
             <nav className="flex justify-row items-auto p-1 w-full bg-[#463d68]">
                     <ul className="flex flex-row justify-around items-center w-full">
-                        <li className="p-2"><Link to="#home" className="text-[#f3f1f2ff]">Home</Link></li>
+                        <li className="p-2"><Link to="/store" className="text-[#f3f1f2ff]">Home</Link></li>
                         <li className="p-2"><Link to="#products" className="text-[#f3f1f2ff]">Products</Link></li>
                         <li className="p-2"><Link to="#deals" className="text-[#f3f1f2ff]">Deals</Link></li>
                         <li className="p-2"><Link to="#contact" className="text-[#f3f1f2ff]">Contact</Link></li>
@@ -27,7 +29,9 @@ const LayoutStore = () => {
             </nav>
             <main className="bg-[#f3f1f2ff] flex-grow flex-1 justify-center items-center">
                 <div className="flex justify-center items-center w-full h-full">
+
                     <Outlet />
+
                 </div>
             </main>
             <footer className="justify-center items-center w-full bg-[#27223aff] text-[#f3f1f2ff] p-2">
