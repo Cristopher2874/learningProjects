@@ -19,6 +19,10 @@ const ShoppingCart = () => {
         setCart(prevCart => prevCart.filter(product => product.id !== id));
     }
 
+    function clearCart(){
+        setCart([]);
+    }
+
     function changeQuantity(change, id){
         if(change === 1){
             const newCart = cart.map(product => {
@@ -28,7 +32,7 @@ const ShoppingCart = () => {
                         quantity: product.quantity - 1
                     }
                 }
-                return item
+                return product
             })
             setCart(newCart);
         } else {
@@ -39,7 +43,7 @@ const ShoppingCart = () => {
                         quantity: product.quantity + 1
                     }
                 }
-                return item
+                return product
             })
             setCart(newCart);
         }
@@ -53,7 +57,8 @@ const ShoppingCart = () => {
             box-border w-4/5 justify-start">
             <section className="flex flex-col mt-4 bg-white p-3 rounded-lg shadow-md w-full justify-between items-start"> 
                 <h2 className="mb-2 text-black text-2xl">Shopping Cart</h2>
-                <a className="cursor-pointer hover:text-black">Select all products</a>
+                <p className="justify-start">Total to pay: ${cartTotal}</p>
+                <a className="cursor-pointer hover:text-black" onClick={()=>clearCart()}>Clear all products</a>
                 <hr className="border-t-[#888b8d] mb-6 w-full mt-3" />
                 <div className="w-full">
                     {cartEmpty ? (
@@ -65,7 +70,6 @@ const ShoppingCart = () => {
                         cart.map((product) => {
                             return(
                                 <div key={product.id}>
-                                <p className="justify-start mb-3 w-40">Total a pagar: ${cartTotal}</p>
                                 <div className="flex flex-row justify-start items-center bg-white border-[#ddd] border rounded-md p-2 shadow-sm mb-3 transition transform duration-200 hover:translate-y-[-5px] hover:shadow-md">
                                     <img src={`${getImages(product)}`} alt={`Image of ${product.title}`} className="p-3 flex-initial w-auto max-h-44 mr-6 ml-1 rounded"/>
                                     <section className="flex flex-col justify-start items-start w-2/3">

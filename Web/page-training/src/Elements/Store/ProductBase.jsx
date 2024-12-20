@@ -27,7 +27,7 @@ const ProductBase = () => {
                             <h2 className="text-xl mb-4">{product.title}</h2>
                             <p className="test-[#555] text-sm p-3">{product.description}</p>
                             <p className="test-[#555] text-sm p-3">${product.price}</p>
-                            <p className="test-[#555] text-sm p-3">{product.category.name}</p>
+                            <p className="test-[#555] text-sm p-3">Category: {product.category.name}</p>
                             <button
                                 className="p-2 mt-3 bg-[#811d2eff] text-[#f3f1f2ff] hover:bg-[#f3b61fff]"
                                 onClick={() => addToCard(product)}
