@@ -37,7 +37,7 @@ const LayoutStore = () => {
     }
 
     return (
-        <LayoutContext.Provider value={{searchItem, setSearchItem, data, setData, cart, addToCard}}>
+        <LayoutContext.Provider value={{searchItem, setSearchItem, data, setData, cart, addToCard, setCart}}>
         <div className="flex flex-col h-screen">
             <header className="flex justify-evenly items-center p-5 bg-[#27223aff]">
                 <img className="flex-initial mr-3" src={reactLogo}></img>
