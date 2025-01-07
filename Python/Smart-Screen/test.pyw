@@ -15,7 +15,8 @@ frame.config(bg="white")
 frame.pack(fill="both", expand=True)
 
 startTime = windll.kernel32.GetTickCount() / 1000
-BREAK_IINTERVAL = 60
+BREAK_IINTERVAL = 1500 #25 minutes
+BREAK_TIME = 180 #3 minutes
 
 def getTime():
     global startTime, levelLabel
@@ -50,7 +51,7 @@ def breakScreen():
     minutes = lap%3600 / 60
     seconds = lap%60
     levelLabel.config(text=(f"Time: {int(minutes)}:{int(seconds)}"))
-    if(lap>10):
+    if(lap>BREAK_TIME):
         normalScreen()
         startTime = currentTime
         getTime()
@@ -63,5 +64,3 @@ levelLabel.grid(column=0,row=0,padx=10,pady=10,columnspan=4)
 getTime()
 
 root.mainloop()
-
-#IA count: 7
