@@ -1,11 +1,3 @@
-## Project: Music-tags
-
-**Description**
-
-Project focused on AprilTag detection on live video to play a different sound depending on the ID's in the frame. Combined sounds could generate different armonies and music.
-
-**Tags:** ```Education``` ```Recreative``` ```Computer Vision``` ```OpenCV```
-
 ### **WorkFlow**
 
 *Phase 1:*
@@ -33,5 +25,3 @@ Project focused on AprilTag detection on live video to play a different sound de
 *Phase 5: extension*
 * Detect the distance of the AprilTags, add a range where the sounds are played and not played.
 * Add a feature to save the generated rythm.
-
-**Start Date:** ```02/08/2024```

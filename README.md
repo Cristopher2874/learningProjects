@@ -18,7 +18,5 @@ Find different single-application projects in Python, Java, C++ and web applicat
 </div>
 
 ## Projects available
-* [Music-tags](./Python/Music-tags)
-* [WEB react start](./Web/MagnaTest/)
-* [NodeJS basic](./Web/testUASLP/)
-* [Manage Page](./Web/page-training/)
+* [Music-tags](./Python/Music-tags/READMe.md)
+* [Smart-Screen](./Python/Smart-Screen/README.md)
