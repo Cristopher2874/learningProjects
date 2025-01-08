@@ -17,18 +17,27 @@ frame.pack(fill="both", expand=True)
 startTime = windll.kernel32.GetTickCount() / 1000
 BREAK_IINTERVAL = 1500 #25 minutes
 BREAK_TIME = 180 #3 minutes
+IS_BREAK = False
 
 def getTime():
-    global startTime, levelLabel
+    global startTime, IS_BREAK
     currentTime = windll.kernel32.GetTickCount() / 1000
     lap = currentTime - startTime
     minutes = lap%3600 / 60
     seconds = lap%60
+
+    interval = BREAK_IINTERVAL if not IS_BREAK else BREAK_TIME #switch interval
+
     levelLabel.config(text=(f"Time: {int(minutes)}:{int(seconds)}"))
-    if(lap>BREAK_IINTERVAL):
-        blockScreen()
+    
+    if(lap>interval):
+        if IS_BREAK:
+            normalScreen()
+            IS_BREAK = False
+        else:
+            blockScreen()
+            IS_BREAK = True
         startTime = currentTime
-        breakScreen()
     root.after(1000, getTime)
 
 def blockScreen():
@@ -42,21 +51,8 @@ def blockScreen():
 
 def normalScreen():
     root.attributes("-fullscreen", 0)
-    #Unlock the event listener?
-
-def breakScreen():
-    global startTime, levelLabel
-    currentTime = windll.kernel32.GetTickCount() / 1000
-    lap = currentTime - startTime
-    minutes = lap%3600 / 60
-    seconds = lap%60
-    levelLabel.config(text=(f"Time: {int(minutes)}:{int(seconds)}"))
-    if(lap>BREAK_TIME):
-        normalScreen()
-        startTime = currentTime
-        getTime()
-    root.after(1000, breakScreen)
-
+    root.attributes("-alpha", 0.5) #opacity
+    #TODO: Unlock the event listener?
 
 levelLabel=tk.Label(frame,text=(""),font=("Arial", 12))
 levelLabel.grid(column=0,row=0,padx=10,pady=10,columnspan=4)
