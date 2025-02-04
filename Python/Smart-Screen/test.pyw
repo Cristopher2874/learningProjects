@@ -16,8 +16,8 @@ frame.pack(fill="both", expand=True)
 
 startTime = windll.kernel32.GetTickCount() / 1000
 pauseStartTime = 0
-BREAK_IINTERVAL = 20 #25 minutes
-BREAK_TIME = 10 #3 minutes
+BREAK_IINTERVAL = 1500 #25 minutes
+BREAK_TIME = 180 #3 minutes
 IS_BREAK = False
 IS_PAUSE = False
 
