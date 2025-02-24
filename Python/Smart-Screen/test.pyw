@@ -6,7 +6,7 @@ import pyautogui as pg
 
 root = tk.Tk()
 root.title("smart screen")
-root.geometry("200x50-5+40")
+root.geometry("500x50-5+40")
 root.attributes("-topmost", 1) #always on top
 root.attributes("-alpha", 0.5) #opacity
 
