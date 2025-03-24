@@ -6,7 +6,7 @@ import pyautogui as pg #
 # Create the main root app
 root = tk.Tk()
 root.title("smart screen")
-root.geometry("500x50-5+40")
+root.geometry("350x120-5+40")
 root.attributes("-topmost", 1) #always on top
 root.attributes("-alpha", 0.5) #opacity
 
@@ -17,25 +17,26 @@ frame.pack(fill="both", expand=True)
 
 #-----Main variables-----#
 
-startTime = windll.kernel32.GetTickCount() / 1000
+startTime = 0
 pauseStartTime = 0
 
-usertime = 10
+usertime = 5
+workInterval = 300
+breakTime = 180
 
-#Time to work
-BREAK_IINTERVAL = 1500 #25 minutes
-#Time in break
-BREAK_TIME = 180 #3 minutes
 #Know if the program is in break
 IS_BREAK = False
 #Know if the program is in pause
 IS_PAUSE = False
+
+flag = False
 
 def blockScreen():
     root.attributes("-fullscreen", 1)
     root.attributes("-alpha", 1) #opacity
     root.grab_set() #block other elements
     pauseButton.config(state=tk.DISABLED)  # Disable during break
+    stopButton.config(state=tk.DISABLED)
     #Lock the event listener?
     #TODO: find a catch solution to instructions in screen
     pg.click() #temp catch solution
@@ -44,10 +45,11 @@ def normalScreen():
     root.attributes("-fullscreen", 0)
     root.attributes("-alpha", 0.5) #opacity
     pauseButton.config(state=tk.NORMAL)  # Disable during break
+    stopButton.config(state=tk.NORMAL)
     #TODO: Unlock the event listener?
 
 def getTime():
-    global startTime, IS_BREAK, IS_PAUSE,pauseStartTime
+    global startTime, IS_BREAK, IS_PAUSE,pauseStartTime, workInterval, breakTime, flag
     currentTime = windll.kernel32.GetTickCount() / 1000
 
     if not IS_PAUSE:
@@ -64,7 +66,7 @@ def getTime():
             pauseStartTime = currentTime
         lap = currentTime - startTime    
 
-    interval = BREAK_IINTERVAL if not IS_BREAK else BREAK_TIME #switch interval
+    interval = workInterval if not IS_BREAK else breakTime #switch interval
 
     if(lap>interval and not IS_PAUSE):
         if IS_BREAK:
@@ -75,7 +77,8 @@ def getTime():
             IS_BREAK = True
         startTime = currentTime
     # Update each second
-    root.after(1000, getTime)
+    if not flag:
+        root.after(1000, getTime)
 
 # Pause function
 def pause():
@@ -91,31 +94,58 @@ def pause():
 def increaseTime():
     global usertime
     if usertime <=110:
-        usertime += 10
+        usertime += 5
     else: usertime = 120
-    selectTime.config(text=(f"{usertime} minutos"))
+    selectTime.config(text=(f"{usertime} minutes"))
 def decreaseTime():
     global usertime
-    if usertime >10:
-        usertime -= 10
-    else: usertime = 10
-    selectTime.config(text=(f"{usertime} minutos"))
+    if usertime >5:
+        usertime -= 5
+    else: usertime = 5
+    selectTime.config(text=(f"{usertime} minutes"))
 
+def startTimer():
+    global startTime, workInterval, breakTime, usertime, IS_PAUSE, IS_BREAK, flag
 
-selectTime = tk.Label(frame, text=(f"{usertime} minutos"), font=("Arial", 12))
+    startTime = windll.kernel32.GetTickCount() / 1000
+    workInterval = usertime*60
+    startButton.config(state="disabled")
+    pauseButton.config(state="normal")
+    IS_PAUSE = False
+    IS_BREAK = False
+    flag = False
+    getTime()
+
+def stopTimer():
+    global usertime, workInterval, breakTime, IS_BREAK, IS_PAUSE, flag
+    startButton.config(state="normal")
+    pauseButton.config(state="disabled")
+    workInterval = usertime
+    breakTime = 180
+    #Know if the program is in break
+    IS_BREAK = False
+    #Know if the program is in pause
+    IS_PAUSE = True
+    pause()
+    flag = True
+    normalScreen()
+    timerLabel.config(text=(f"Time: 0:0"))
+
+selectTime = tk.Label(frame, text=(f"{usertime} minutes"), font=("Arial", 12))
 selectTime.grid(column=1, row=0, padx=10, pady=10, sticky="w")
-sumButton = tk.Button(frame, text="+", command=increaseTime)
-sumButton.grid(column=0, row=0, padx=10, pady=10, sticky="e")
 restButton = tk.Button(frame, text="-", command=decreaseTime)
-restButton.grid(column=2, row=0, padx=10, pady=10, sticky="e")
-startButton = tk.Button(frame, text="START", command=getTime)
+restButton.grid(column=0, row=0, padx=10, pady=10, sticky="e")
+sumButton = tk.Button(frame, text="+", command=increaseTime)
+sumButton.grid(column=2, row=0, padx=10, pady=10, sticky="e")
+startButton = tk.Button(frame, text="START", command=startTimer)
 startButton.grid(column=3, row=0, padx=10, pady=10, sticky="e")
+stopButton = tk.Button(frame, text="Stop", command=stopTimer)
+stopButton.grid(column=4, row=0, padx=10, pady=10, sticky="e")
 
 timerLabel = tk.Label(frame, text="", font=("Arial", 12))
-timerLabel.grid(column=0, row=1, padx=10, pady=10, sticky="w")
+timerLabel.grid(column=1, row=1, padx=10, pady=10, sticky="w")
 pauseButton = tk.Button(frame, text="Pause", command=pause)
-pauseButton.grid(column=1, row=1, padx=10, pady=10, sticky="e")
-
-#getTime()
+pauseButton.grid(column=3, row=1, padx=10, pady=10, sticky="e")
+pauseButton.config(state="disabled")
 
 root.mainloop()
