@@ -1,6 +1,6 @@
 import tkinter as tk # GUI
 from ctypes import windll #Obtener el tiempo en windows
-import pyautogui as pg #
+#import pyautogui as pg #
 #TODO: find solution to catch user actions in screen
 
 # Create the main root app
@@ -39,7 +39,7 @@ def blockScreen():
     stopButton.config(state=tk.DISABLED)
     #Lock the event listener?
     #TODO: find a catch solution to instructions in screen
-    pg.click() #temp catch solution
+    #pg.click() #temp catch solution
 
 def normalScreen():
     root.attributes("-fullscreen", 0)
@@ -149,3 +149,22 @@ pauseButton.grid(column=3, row=1, padx=10, pady=10, sticky="e")
 pauseButton.config(state="disabled")
 
 root.mainloop()
+
+"""
+n = filas de la matriz
+m = columnas de la matriz
+
+i = 0 coordenada de fila
+j = 0 coordenada de columna
+
+si i = n y j = m y [i][j] diferentes de x
+regresar falso, no hay matriz o x
+
+Para i = 0; i menor a n; i++
+    para j = 0; j menor que m; j++
+        si [i][j] = x
+            regresar cierto (encontramos una x)
+
+regresar falso (no hay x)
+
+"""
